@@ -1,7 +1,7 @@
 import random
 import string
 
-WORDLIST_FILENAME = "palavras.txt"
+WORDLIST_FILENAME = "words.txt"
 
 
 def loadWords():
@@ -10,11 +10,9 @@ def loadWords():
     take a while to finish.
     """
     print("Loading word list from file...")
-    # inFile: file
+
     inFile = open(WORDLIST_FILENAME, 'r')
-    # line: string
     line = inFile.readline()
-    # wordlist: list of strings
     wordlist = str.split(line)
     print("  ", len(wordlist), "words loaded.")
     return random.choice(wordlist)
@@ -100,6 +98,13 @@ def hangman(secretWord):
         else:
             print('Sorry, you ran out of guesses. \
             The word was ', secretWord, '.')
+
+            count = input('Press y to continue or any key to go out\n\n\n')
+            if (count == 'y'):
+                print('\n\n Glad you are back! Keep Trying!!')
+                hangman(secretWord)
+            else:
+                print('See you later alligator!')
 
 
 secretWord = loadWords().lower()
