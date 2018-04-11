@@ -52,12 +52,18 @@ def getAvailableLetters(lettersGuessed):
     return available
 
 
+def getUniqueLetters(secretWord):
+    differentLetters = set(secretWord)
+    return len(differentLetters)
+
+
 def hangman(secretWord):
 
     guesses = 8
     lettersGuessed = []
     print('Welcome to the game, Hangman!')
     print('I am thinking of a word that is', len(secretWord), 'letters long.')
+    print('The word has: ', getUniqueLetters(secretWord), 'letters')
     print('-------------')
 
     while not isWordGuessed(secretWord, lettersGuessed) and guesses > 0:
