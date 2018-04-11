@@ -23,4 +23,10 @@ Para executar o projeto, use o comando:
 ```
 python hang.py
 ```
+Para rodar o Guia de Estilo:
 
+instale o pep8:
+
+$ pip install pycodestyle
+
+$ pycodestyle hang.py
