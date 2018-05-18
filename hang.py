@@ -29,6 +29,10 @@ class Words:
 
         line = inFile.readline()
 
+        if not line:
+            print("The file doens't have any words.")
+            sys.exit(0)
+
         wordlist = line.split()
         print("  ", len(wordlist), "words loaded.")
         return random.choice(wordlist)
