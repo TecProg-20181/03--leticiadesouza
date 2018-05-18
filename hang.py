@@ -1,5 +1,6 @@
 import random
 import string
+import sys
 
 
 class Words:
@@ -19,7 +20,13 @@ class Words:
         """
         print("Loading word list from file...")
 
-        inFile = open(self.wordlist_filename, 'r')
+        try:
+            inFile = open(self.wordlist_filename, 'r')
+
+        except FileNotFoud:
+            print("This file", self.wordlist_filename, "doesn't exist")
+            sys.exit(0)
+
         line = inFile.readline()
 
         wordlist = line.split()
